@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Угадайка</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css'
+    integrity='sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=='
+    crossorigin='anonymous' />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="card position-absolute top-50 start-50 translate-middle">
+    <div class="card-body">
+      <button class="btn btn-dark" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Нажми меня</button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Привет. Я игра "Угадайка"</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="" class="form-label">Введите минимальное значение числа для игры:</label>
+            <input type="text" class="form-control form-control-sm" name="min" id="minValue" aria-describedby="helpId"
+              placeholder="0">
+            <label for="" class="form-label">Введите максимальное значение числа для игры:</label>
+            <input type="text" class="form-control form-control-sm" name="max" id="maxValue" aria-describedby="helpId"
+              placeholder="100">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="btnPrimary" data-bs-target="#exampleModalToggle2"
+            data-bs-toggle="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-primary" id="alerts" role="alert"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="btnPrimary_1" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex game-card align-items-center ">
+      <div class="col col-md-4 offset-md-4 ">
+        <div class="card text-center ">
+          <div class="card-header">
+            <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
+          </div>
+          <div class="card-body">
+            <div class="row no-gutters">
+              <div class="col">
+                <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-danger" id="btnLess">меньше<br>&lt;</button>
+              <button class="btn btn-success" id="btnEqual">Верно!</button>
+              <button class="btn btn-warning" id="btnOver">больше<br>&gt;</button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group-lg">
+              <button class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle" id="btnRetry"
+                role="button">Заново</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js'
+    integrity='sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=='
+    crossorigin='anonymous'></script>
+  <script src="js/scriptNumberOrString.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
