@@ -23,7 +23,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content ">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Привет. Я игра "Угадайка"</h1>
+          <h1 class="modal-title text-center" id="exampleModalToggleLabel">Привет. Я игра "Угадайка"</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
@@ -33,8 +33,11 @@
               placeholder="0">
             <label for="" class="form-label">Введите максимальное значение числа для игры:</label>
             <input type="text" class="form-control form-control-sm" name="max" id="maxValue" aria-describedby="helpId"
-              placeholder="100">
-          </div>
+              placeholder="100"><br>
+              <div class="alert alert-warning" role="alert">
+                Если вы введете числа больше 999 или меньше -999, числа будут присвоены 999 или -999
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" id="btnPrimary" data-bs-target="#exampleModalToggle2"

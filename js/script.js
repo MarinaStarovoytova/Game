@@ -16,13 +16,24 @@ let gameRun;
 btnPrimary.addEventListener('click', () => {
     minValue = parseInt(document.querySelector('#minValue').value) || 0;
     maxValue = parseInt(document.querySelector('#maxValue').value) || 100;
-
+   
     minValue = (minValue > 999) ? 999 : minValue;
     minValue = (minValue < -999) ? -999 : minValue;
     maxValue = (maxValue > 999) ? 999 : maxValue;
     maxValue = (maxValue < -999) ? -999 : maxValue;
 
-    alerts.textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+    if (minValue > maxValue) {
+        alerts.textContent = `Вы ввели ${minValue} > ${maxValue} -  это неверно. 
+        Значения числа будут присвоены умолчанию (0 и 100).`;
+        minValue = 0;
+        maxValue = 100;
+    } else if (minValue == maxValue) {
+        alerts.textContent = `Вы ввели одинаковые значения числа.
+        Есть только одно число! Угадаю ли я? Нажмите "ОК".`;
+    } else {
+        alerts.textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, 
+        а я его угадаю`;
+    }
 })
 
 btnPrimary_1.addEventListener('click', () => {
@@ -49,6 +60,8 @@ exampleModalToggle2.addEventListener('keydown', function (event) {
 // Заново
 let btnRetry = document.querySelector('#btnRetry');
 btnRetry.addEventListener('click', function () {
+    document.querySelector('#minValue').value = '';
+    document.querySelector('#maxValue').value = '';
     answerNumber = Math.floor((minValue + maxValue) / 2);
     questionRandom();
     orderNumber = 1;
